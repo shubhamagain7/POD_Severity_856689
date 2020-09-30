@@ -17,7 +17,7 @@ namespace AuditSeverityModule.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class AuditSeverityController : ControllerBase
     {
         private readonly ISeverityProvider objProvider;
