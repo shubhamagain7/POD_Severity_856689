@@ -16,12 +16,12 @@ namespace AuditSeverityModule.Providers
             objRepository = _objRepository;
         }       
 
-        public AuditResponse SeverityResponse(AuditRequest auditRequest)
+        public AuditResponse SeverityResponse(AuditRequest auditRequest,string token)
         {            
             try
             {
                 _log4net.Info(" Http POST request from " + nameof(SeverityProvider));
-                List<AuditBenchmark> listfromRepository = objRepository.Response();               
+                List<AuditBenchmark> listfromRepository = objRepository.Response(token);               
                 int count = 0, acceptableNo = 0;
 
                 if (auditRequest.Auditdetails.questions.Question1 == false)
